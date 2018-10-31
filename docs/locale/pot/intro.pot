@@ -21,7 +21,7 @@ msgid "oauthkit-google"
 msgstr ""
 
 #: ../../../README.rst:4
-msgid "OAuthkit for google"
+msgid "OAuthKit for Google"
 msgstr ""
 
 #: ../../../README.rst:8

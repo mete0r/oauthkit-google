@@ -57,7 +57,7 @@ master_doc = 'index'
 project = u'oauthkit-google'
 copyright = u'2015-2017, mete0r'
 author = u'mete0r'
-description = u'OAuthkit for google'
+description = u'OAuthKit for Google'
 doc_title = project
 
 # The version info for the project you're documenting, acts as replacement for

@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-#   oauthkit-google: OAuthkit for google
+#   oauthkit-google: OAuthKit for Google
 #   Copyright (C) 2015-2017 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
-#   it under the terms of the GNU Affero General Public License as published by
+#   it under the terms of the GNU Lesser General Public License as published by
 #   the Free Software Foundation, either version 3 of the License, or
 #   (at your option) any later version.
 #
 #   This program is distributed in the hope that it will be useful,
 #   but WITHOUT ANY WARRANTY; without even the implied warranty of
 #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#   GNU Affero General Public License for more details.
+#   GNU Lesser General Public License for more details.
 #
-#   You should have received a copy of the GNU Affero General Public License
+#   You should have received a copy of the GNU Lesser General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 from __future__ import with_statement
@@ -100,18 +100,17 @@ tests_require = readfile('requirements/test.in')
 setup_info = {
     'name': 'oauthkit-google',
     'version': get_version(),
-    'description': 'OAuthkit for google',
+    'description': 'OAuthKit for Google',
     'long_description': '\n'.join([readfile('README.rst'),
                                    readfile('CHANGES.rst')]),
 
     'author': 'mete0r',
     'author_email': 'mete0r@sarangbang.or.kr',
-    'license': 'GNU Affero General Public License v3 or later (AGPLv3+)',
-    # 'url': 'https://github.com/mete0r/oauthkit-google',
+    'license': 'GNU Lesser General Public License v3 or later (LGPLv3+)',
+    'url': 'https://github.com/mete0r/oauthkit-google',
 
     'packages': [
         'oauthkit_google',
-        'oauthkit_google.recipe',
     ],
     # do not use '.'; just omit to specify setup.py directory
     'package_dir': {
@@ -121,9 +120,6 @@ setup_info = {
         'oauthkit_google': [
             'locale/*/*/*.mo',
         ],
-        # 'oauthkit_google.tests': [
-        #   'files/*',
-        # ],
     },
     'install_requires': install_requires,
     'test_suite': '__main__.alltests',
@@ -139,29 +135,24 @@ setup_info = {
     },
     'entry_points': {
         'console_scripts': [
-            'oauthkit-google = oauthkit_google.cli:main',
-        ],
-        'zc.buildout': [
-            'default = oauthkit_google.recipe:Recipe',
-        ],
-        'zc.buildout.uninstall': [
-            'default = oauthkit_google.recipe:uninstall',
+            # 'oauthkit-google = oauthkit_google.cli:main',
         ],
         'paste.app_factory': [
-            'main = oauthkit_google.wsgi:app_factory',
+            # 'main = oauthkit_google.wsgi:app_factory',
         ],
     },
     'classifiers': [
         'Development Status :: 1 - Planning',
-        # 'Intended Audience :: Developers',
-        'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',  # noqa
-        # 'Operating System :: OS Independent',
-        # 'Programming Language :: Python',
-        # 'Programming Language :: Python :: 2.7',
-        # 'Programming Language :: Python :: 3.4',
-        # 'Programming Language :: Python :: Implementation :: CPython',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',  # noqa
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: Implementation :: CPython',
     ],
     'keywords': [
+        'oauth', 'google',
     ],
     'zip_safe': False,
 }
