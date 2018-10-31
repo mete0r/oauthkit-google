@@ -1,9 +1,9 @@
 [run]
 branch = True
-source = METE0R_PACKAGE
+source = oauthkit_google
 
 [paths]
 source =
-	src/METE0R_PACKAGE
-	.tox/*/lib/python*/site-packages/METE0R_PACKAGE
-	.tox/pypy*/site-packages/METE0R_PACKAGE
+	src/oauthkit_google
+	.tox/*/lib/python*/site-packages/oauthkit_google
+	.tox/pypy*/site-packages/oauthkit_google

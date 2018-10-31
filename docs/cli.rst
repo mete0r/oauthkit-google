@@ -1,10 +1,10 @@
 Command-line interface
 ======================
 
-METE0R-PROJECT
+oauthkit-google
 --------------
 
 .. argparse::
-   :module: METE0R_PACKAGE.cli
+   :module: oauthkit_google.cli
    :func: main_argparse
-   :prog: METE0R-PROJECT
+   :prog: oauthkit-google

@@ -1,7 +1,7 @@
-METE0R-PROJECT
+oauthkit-google
 ==============
 
-SOME_DESCRIPTION
+OAuthkit for google
 
 
 Production environment
