@@ -9,7 +9,7 @@ attrs==18.2.0             # via pytest
 babel==2.6.0
 coverage==4.5.1
 funcsigs==1.0.2           # via pytest
-jsonable-objects==0.1.2
+jsonable-objects==0.1.4
 more-itertools==4.3.0     # via pytest
 pathlib2==2.3.2           # via pytest
 pluggy==0.8.0             # via pytest

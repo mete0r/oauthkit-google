@@ -20,7 +20,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from jsonable_objects.proxy import JsonableProxy
+from jsonable_objects.proxy import proxy
+from jsonable_objects.proxy import Field
 from zope.interface import implementer
 
 from .interfaces import IGoogleClientSecret
@@ -28,75 +29,23 @@ from .interfaces import IGoogleTokenResponse
 
 
 @implementer(IGoogleClientSecret)
-class GoogleClientSecret(JsonableProxy):
+@proxy(dict)
+class GoogleClientSecret(object):
 
-    @classmethod
-    def validate(cls, d):
-        proxy = cls(d)
-        proxy.client_id
-        proxy.client_secret
-        proxy.project_id
-        proxy.auth_uri
-        proxy.token_uri
-        proxy.auth_provider_x509_cert_url
-        proxy.redirect_uris
-        return proxy
-
-    @property
-    def client_id(self):
-        return str(self.__jsonable__['client_id'])
-
-    @property
-    def client_secret(self):
-        return str(self.__jsonable__['client_secret'])
-
-    @property
-    def project_id(self):
-        return str(self.__jsonable__['project_id'])
-
-    @property
-    def auth_uri(self):
-        return str(self.__jsonable__['auth_uri'])
-
-    @property
-    def token_uri(self):
-        return str(self.__jsonable__['token_uri'])
-
-    @property
-    def auth_provider_x509_cert_url(self):
-        return str(self.__jsonable__['auth_provider_x509_cert_url'])
-
-    @property
-    def redirect_uris(self):
-        return self.__jsonable__['redirect_uris']
+    client_id = Field(type=str)
+    client_secret = Field(type=str)
+    project_id = Field(type=str)
+    auth_uri = Field(type=str)
+    token_uri = Field(type=str)
+    auth_provider_x509_cert_url = Field(type=str)
+    redirect_uris = Field(type=list)
 
 
 @implementer(IGoogleTokenResponse)
-class GoogleTokenResponse(JsonableProxy):
+@proxy(dict)
+class GoogleTokenResponse(object):
 
-    @classmethod
-    def validate(cls, d):
-        proxy = cls(d)
-        proxy.access_token
-        proxy.expires_in
-        proxy.token_type
-        proxy.refresh_token
-        return proxy
-
-    @property
-    def access_token(self):
-        return str(self.__jsonable__['access_token'])
-
-    @property
-    def expires_in(self):
-        return int(self.__jsonable__['expires_in'])
-
-    @property
-    def token_type(self):
-        return str(self.__jsonable__['token_type'])
-
-    @property
-    def refresh_token(self):
-        refresh_token = self.__jsonable__.get('refresh_token')
-        if refresh_token is not None:
-            return str(refresh_token)
+    access_token = Field(type=str)
+    expires_in = Field(type=int)
+    token_type = Field(type=str)
+    refresh_token = Field(type=str, optional=True)

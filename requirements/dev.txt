@@ -47,6 +47,7 @@ ipython-genutils==0.2.0   # via nbformat, notebook, qtconsole, traitlets
 ipython==5.8.0            # via ipykernel, ipywidgets, jupyter-console
 ipywidgets==7.4.1         # via jupyter
 jinja2==2.10              # via nbconvert, notebook, sphinx
+jsonable-objects==0.1.4
 jsonschema==2.6.0         # via nbformat
 jupyter-client==5.2.3     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==5.2.0    # via jupyter
@@ -115,4 +116,4 @@ wheel==0.31.1
 widgetsnbextension==3.4.1  # via ipywidgets
 zc.buildout==2.12.2
 zest.releaser==6.15.2
-zope.interface==4.5.0     # via repoze.sphinx.autointerface
+zope.interface==4.5.0

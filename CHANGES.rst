@@ -4,7 +4,9 @@ Changes
 0.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Change how to create proxies.
+- Remove ``validate`` class methods.
+- requires jsonable-objects >= 0.1.4
 
 
 0.1.0 (2018-10-31)

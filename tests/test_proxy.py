@@ -26,7 +26,7 @@ from zope.interface import providedBy
 
 class GoogleClientSecretTest(TestCase):
 
-    def test_validate(self):
+    def test_proxy(self):
         from jsonable_objects.interfaces import IJsonable
         from oauthkit_google.interfaces import IGoogleClientSecret
         from oauthkit_google.proxy import GoogleClientSecret
@@ -46,7 +46,7 @@ class GoogleClientSecretTest(TestCase):
             }
         }
 
-        clientsecret = GoogleClientSecret.validate(d['installed'])
+        clientsecret = GoogleClientSecret(d['installed'])
         self.assertTrue(IGoogleClientSecret in list(providedBy(clientsecret)))
         self.assertTrue(IJsonable in list(providedBy(clientsecret)))
         self.assertEquals(d['installed'], clientsecret.__jsonable__)
@@ -82,7 +82,7 @@ class GoogleClientSecretTest(TestCase):
 
 class GoogleTokenResponseTest(TestCase):
 
-    def test_validate_without_refreshtoken(self):
+    def test_proxy_without_refreshtoken(self):
         from jsonable_objects.interfaces import IJsonable
         from oauthkit_google.interfaces import IGoogleTokenResponse
         from oauthkit_google.proxy import GoogleTokenResponse
@@ -92,7 +92,7 @@ class GoogleTokenResponseTest(TestCase):
             "expires_in": 3600,
             "token_type": "Bearer"
         }
-        resp = GoogleTokenResponse.validate(d)
+        resp = GoogleTokenResponse(d)
 
         self.assertTrue(IGoogleTokenResponse in list(providedBy(resp)))
         self.assertTrue(IJsonable in list(providedBy(resp)))
@@ -110,7 +110,7 @@ class GoogleTokenResponseTest(TestCase):
             None, resp.refresh_token
         )
 
-    def test_validate(self):
+    def test_proxy(self):
         from jsonable_objects.interfaces import IJsonable
         from oauthkit_google.interfaces import IGoogleTokenResponse
         from oauthkit_google.proxy import GoogleTokenResponse
@@ -121,7 +121,7 @@ class GoogleTokenResponseTest(TestCase):
             "token_type": "Bearer",
             "refresh_token": "invalid-refresh-token",
         }
-        resp = GoogleTokenResponse.validate(d)
+        resp = GoogleTokenResponse(d)
 
         self.assertTrue(IGoogleTokenResponse, list(providedBy(resp)))
         self.assertTrue(IJsonable in list(providedBy(resp)))
