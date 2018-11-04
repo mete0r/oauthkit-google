@@ -4,7 +4,7 @@ Changes
 0.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Enhance GoogleClientSecret struct.
 
 
 0.1.1 (2018-11-04)

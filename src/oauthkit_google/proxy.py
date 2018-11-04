@@ -34,11 +34,12 @@ class GoogleClientSecret(object):
 
     client_id = Field(type=str)
     client_secret = Field(type=str)
-    project_id = Field(type=str)
     auth_uri = Field(type=str)
     token_uri = Field(type=str)
-    auth_provider_x509_cert_url = Field(type=str)
     redirect_uris = Field(type=list)
+    client_email = Field(type=str, optional=True)
+    auth_provider_x509_cert_url = Field(type=str, optional=True)
+    client_x509_cert_url = Field(type=str, optional=True)
 
 
 @implementer(IGoogleTokenResponse)

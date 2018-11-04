@@ -59,10 +59,6 @@ class GoogleClientSecretTest(TestCase):
             clientsecret.client_secret
         )
         self.assertEquals(
-            d['installed']['project_id'],
-            clientsecret.project_id
-        )
-        self.assertEquals(
             d['installed']['auth_uri'],
             clientsecret.auth_uri
         )
@@ -77,6 +73,14 @@ class GoogleClientSecretTest(TestCase):
         self.assertEquals(
             d['installed']['redirect_uris'],
             clientsecret.redirect_uris
+        )
+        self.assertEquals(
+            None,
+            clientsecret.client_email,
+        )
+        self.assertEquals(
+            None,
+            clientsecret.client_x509_cert_url,
         )
 
 
