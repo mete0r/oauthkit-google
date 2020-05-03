@@ -108,6 +108,6 @@ notebook:
 
 .PHONY: test
 test: requirements/test.txt
-	$(VENV) detox -e py27,py34,pypy
+	$(VENV) tox -p 2 -e py38,pypy3
 	$(VENV) coverage combine
 	$(VENV) coverage report
